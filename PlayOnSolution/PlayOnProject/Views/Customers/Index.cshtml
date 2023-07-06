@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PlayOnProject.Models.Customer>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div class="row">
+    <div class="offset-1 col-10">
+        <div class="d-flex justify-content-end mb-2">
+            @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-sm btn-primary" })
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th> Email</th>
+                    <th>PhoneNumber</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="tr_d_@item.CustomerId">
+                        <td>@item.CustomerName </td>
+                        <td>@item.Email </td>
+                        <td>@item.PhoneNumber </td>
+                        <td>@item.address</td>
+
+                        <td>
+                            <a href="/Customers/Edit/@item.CustomerId" class="btn btn-sm btn-success">Edit</a>
+                            <button type="button" data-pk="@item.CustomerId" class="btn btn-danger btn-sm d-del">Delete</button>
+                            <a href="/Reports/SaveInvoice/@item.CustomerId" class="btn btn-sm btn-info">Invoice</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script>
+        $(".d-del").click(function () {
+            var id = $(this).data('pk');
+
+            if (confirm("Are you sure to delete?")) {
+                $.ajax({
+                    type: 'post',
+                    url: '/Customers/Delete/' + id,
+                    dataType: 'json',
+                    success: r => {
+
+                        console.log(r)
+                        $("#tr_d_" + id).remove();
+
+                    }
+                })
+            }
+        })
+    </script>
+}

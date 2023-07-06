@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProductDbModelStoreContainer" CdmEntityContainer="ProductDbEntities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ProductDbModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ProductDbModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="ProductDbModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="ManufacturerDate" ColumnName="ManufacturerDate" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchases">
+      <EntityTypeMapping TypeName="ProductDbModel.purchase">
+        <MappingFragment StoreEntitySet="purchases">
+          <ScalarProperty Name="purchaseId" ColumnName="purchaseId" />
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SelectSingleProduct" FunctionName="ProductDbModel.Store.SelectSingleProduct" />
+    <FunctionImportMapping FunctionImportName="SPAlldata" FunctionName="ProductDbModel.Store.SPAlldata">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProductDbModel.SPAlldata_Result">
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Stock" ColumnName="Stock" />
+          <ScalarProperty Name="ManufacturerDate" ColumnName="ManufacturerDate" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="ProductId1" ColumnName="ProductId1" />
+          <ScalarProperty Name="Price1" ColumnName="Price1" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="CustomerId1" ColumnName="CustomerId1" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="purchaseId" ColumnName="purchaseId" />
+          <ScalarProperty Name="PurchaseDate" ColumnName="PurchaseDate" />
+          <ScalarProperty Name="Quantity1" ColumnName="Quantity1" />
+          <ScalarProperty Name="Price2" ColumnName="Price2" />
+          <ScalarProperty Name="ProductId2" ColumnName="ProductId2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SpdeleteCustomer" FunctionName="ProductDbModel.Store.SpdeleteCustomer" />
+    <FunctionImportMapping FunctionImportName="SpDeleteOrder" FunctionName="ProductDbModel.Store.SpDeleteOrder" />
+    <FunctionImportMapping FunctionImportName="SpdeleteProduct" FunctionName="ProductDbModel.Store.SpdeleteProduct" />
+    <FunctionImportMapping FunctionImportName="SpDeletepurchase" FunctionName="ProductDbModel.Store.SpDeletepurchase" />
+    <FunctionImportMapping FunctionImportName="SpEditCustomer" FunctionName="ProductDbModel.Store.SpEditCustomer" />
+    <FunctionImportMapping FunctionImportName="SpEditOrder" FunctionName="ProductDbModel.Store.SpEditOrder" />
+    <FunctionImportMapping FunctionImportName="SpEditProduct" FunctionName="ProductDbModel.Store.SpEditProduct" />
+    <FunctionImportMapping FunctionImportName="SpEditpurchase" FunctionName="ProductDbModel.Store.SpEditpurchase" />
+    <FunctionImportMapping FunctionImportName="SpInsertCustomer" FunctionName="ProductDbModel.Store.SpInsertCustomer" />
+    <FunctionImportMapping FunctionImportName="SpInsertOrder" FunctionName="ProductDbModel.Store.SpInsertOrder" />
+    <FunctionImportMapping FunctionImportName="SpInsertProduct" FunctionName="ProductDbModel.Store.SpInsertProduct" />
+    <FunctionImportMapping FunctionImportName="SpInsertpurchase" FunctionName="ProductDbModel.Store.SpInsertpurchase" />
+    <FunctionImportMapping FunctionImportName="SpOrderWithPC" FunctionName="ProductDbModel.Store.SpOrderWithPC" />
+    <FunctionImportMapping FunctionImportName="SpSelectAllCustomers" FunctionName="ProductDbModel.Store.SpSelectAllCustomers" />
+    <FunctionImportMapping FunctionImportName="SpSelectAllOrder" FunctionName="ProductDbModel.Store.SpSelectAllOrder" />
+    <FunctionImportMapping FunctionImportName="SpSelectAllProducts" FunctionName="ProductDbModel.Store.SpSelectAllProducts" />
+    <FunctionImportMapping FunctionImportName="SpSelectAllpurchases" FunctionName="ProductDbModel.Store.SpSelectAllpurchases" />
+    <FunctionImportMapping FunctionImportName="SpSelectSingleCustomer" FunctionName="ProductDbModel.Store.SpSelectSingleCustomer" />
+    <FunctionImportMapping FunctionImportName="SpSelectSingleOrder" FunctionName="ProductDbModel.Store.SpSelectSingleOrder" />
+  </EntityContainerMapping>
+</Mapping>
